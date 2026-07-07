@@ -1,0 +1,61 @@
+                    +----------------+
+                    |     USER       |
+                    +----------------+
+                    | user_id (PK)   |
+                    | name           |
+                    | email          |
+                    | phone          |
+                    | password       |
+                    +----------------+
+                           |
+                           | 1
+                           |
+                           | M
+                    +----------------+
+                    |     ORDERS     |
+                    +----------------+
+                    | order_id (PK)  |
+                    | user_id (FK)   |
+                    | order_date     |
+                    | total_amount   |
+                    | status         |
+                    +----------------+
+                           |
+                           |1
+                           |
+                           |M
+                    +------------------+
+                    |   ORDERITEMS     |
+                    +------------------+
+                    | item_id (PK)     |
+                    | order_id (FK)    |
+                    | product_id (FK)  |
+                    | quantity         |
+                    | price            |
+                    +------------------+
+                           |
+                           |
+                           |
+                    +----------------+
+                    |    PRODUCT     |
+                    +----------------+
+                    | product_id(PK) |
+                    | name           |
+                    | price          |
+                    | stock          |
+                    | category_id FK |
+                    +----------------+
+                           |
+                           |
+                           |
+                    +----------------+
+                    |   CATEGORY     |
+                    +----------------+
+                    | category_id PK |
+                    | category_name  |
+                    +----------------+
+
+USER ----< PAYMENTS
+USER ----< REVIEWS >---- PRODUCT
+USER ----< WISHLIST >---- PRODUCT
+ORDERS ----< SHIPMENTS
